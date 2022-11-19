@@ -5,7 +5,7 @@ module LogParser
     end
 
     def lines
-      
+      File.open(@path, "r").each.map(&:chomp)
     end
   end
 end
