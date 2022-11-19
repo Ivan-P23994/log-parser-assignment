@@ -5,7 +5,15 @@ module LogParser
     end
 
     def lines
-      File.open(@path, "r").each.map(&:chomp)
+      open.each.map(&:chomp)
+    end
+
+    private
+
+    def open
+      File.open(@path, "r")
+    rescue Errno::ENOENT => e
+      raise LogParser::Error, e.message
     end
   end
 end
