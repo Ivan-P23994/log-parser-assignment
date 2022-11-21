@@ -12,6 +12,6 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-### Navigate to the log_parser directory on your device.
+#### Navigate to the log_parser directory on your device.
 
      $ ./exe/log_parser /path/to/your/webserver.log
