@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module LogParser
   class Formatter
     def initialize(grouped_results)
@@ -8,7 +10,7 @@ module LogParser
       <<~HTML
         Entries by total views:
         #{total_views}
-        
+
         Entries by unique views:
         #{unique_views}
       HTML

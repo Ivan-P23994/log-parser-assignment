@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 RSpec.describe LogParser::FileReader do
   let(:file_reader) { described_class.new(path) }
-  let(:path) { File.expand_path("../fixtures/test.log", __FILE__) }
+  let(:path) { File.expand_path("fixtures/test.log", __dir__) }
 
   describe "#lines" do
     subject(:lines) { file_reader.lines }
@@ -15,6 +17,6 @@ RSpec.describe LogParser::FileReader do
       it "raises error" do
         expect { lines }.to raise_error(LogParser::Error)
       end
-    end 
+    end
   end
 end

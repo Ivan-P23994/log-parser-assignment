@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe LogParser::Counter do
   let(:counter) { described_class.new }
 

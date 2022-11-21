@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require "bundler/setup"
 require "log_parser"
 
 def request_argument
-  STERR.puts "Please provide a file path, ex. #{File.basename($0)} /some/file.log"
+  STERR.puts "Please provide a file path, ex. #{File.basename($PROGRAM_NAME)} /some/file.log"
 
   exit 1
 end
@@ -15,5 +16,5 @@ begin
   parser = LogParser::Parser.new(file_path)
   puts parser.format
 rescue LogParser::Error => e
-  STDERR.put "Couldn't parse log: #{e.message}"
+  $stderr.put "Couldn't parse log: #{e.message}"
 end

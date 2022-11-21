@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 RSpec.describe LogParser::Grouper do
   let(:grouper) { described_class.new(lines) }
-  let(:lines) {
+  let(:lines) do
     [
       LogParser::Line.new("/about", "1.2.2.2"),
       LogParser::Line.new("/about", "1.2.2.2"),
@@ -8,7 +10,7 @@ RSpec.describe LogParser::Grouper do
       LogParser::Line.new("/home", "1.2.2.2"),
       LogParser::Line.new("/home", "1.2.2.2")
     ]
-  }
+  end
 
   describe "#group" do
     subject(:group) { grouper.group }

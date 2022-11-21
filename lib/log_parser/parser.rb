@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module LogParser
   class Parser
-    def initialize(input, options ={})
+    def initialize(input, options = {})
       @input = input
 
       @formatter = options[:formatter] || Formatter

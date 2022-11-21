@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 RSpec.describe LogParser::Parser do
   let(:parser) { described_class.new("some/file") }
 
   describe "#format" do
     subject { parser.format }
 
-    let(:reader) {
+    let(:reader) do
       instance_double(LogParser::FileReader, lines: ["/about-us 1.1.1.1", "/contact 2.2.2.2"])
-    }
+    end
 
     before do
       allow(LogParser::FileReader).to receive(:new).with("some/file").and_return(reader)

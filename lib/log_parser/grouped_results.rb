@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module LogParser
   class GroupedResults < Hash
     def sort_by_total
