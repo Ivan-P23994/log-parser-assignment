@@ -11,16 +11,16 @@ module LogParser
     end
 
     def format
-      @formatter.new(grouped_data).format
+      @formatter.new(group_data).format
     end
 
     private
 
-    def grouped_data
-      Grouper.new(scrapped_data).group
+    def group_data
+      Grouper.new(scrap_data).group
     end
 
-    def scrapped_data
+    def scrap_data
       @scrapper.new(read_data).scrap
     end
 
